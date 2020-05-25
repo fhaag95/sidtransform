@@ -13,7 +13,7 @@ def transform(sid):
 
         # revision
         sidhex += format_struct_data(struct.pack(">B", int(parts[1])))
-        # number of dashes minus two
+        # number of dashes minus one (needs to be minus two if user SID is supplied)
         sidhex += format_struct_data(struct.pack(">B", numDashes))
 
         sidhex += "{0:012x}".format(int(parts[2]))
